@@ -18,7 +18,7 @@ void adc_loop(){
     if(occupied_channels[i] && channel[i].finished){ //Si esta ocupado, y ademas tiene una conversion lista
       cli(); //Es necesario deshabilitar interrupciones aca?
       channel[i].finished = 0; //Desmarco el terminado
-      sei();
+	  sei();
       channel[i].callback(channel[i].valor); //Llamo a la funcion callback con el valor obtenido por el adc
     }
   }
@@ -31,13 +31,9 @@ void adc_loop(){
 void adc_configure(){
   cli();
   ADCSRA |= B10000000;//    Enable ADC.
-  ADMUX &= B11011111;//        Set right - adjust results.
-  ADMUX |= B01000000;//        Set REFS1 to external source.
-  //ADMUX |= 0;// (8 - 0)        Select analog input.
-  //ADCSRA |= B00100000;//    Enable auto trigger.
-  //ADCSRB &= B11111000;//    Set trigger to Free Running Mode.
-  ADCSRA &= ~PS_128;//        removes bits set by Arduino library
-  //ADCSRA |= PS_128;//        Set prescaler.
+  // ADMUX &= B11011111;//        Set right - adjust results.
+  ADMUX = (1 << REFS0);   //select AVCC as reference
+  ADCSRA |= PS_128;//        Set prescaler.
   ADCSRA |= B00001000;//    Enable ADC interrupt.
   first_configuration = 0;
   sei();//                    Enbale global interrupts.
@@ -79,12 +75,11 @@ void adc_set_new_channel(){
 */
 bool adc_init(adc_cfg *cfg){
   if(first_configuration) //Si es la primera vez que entro...
-    fnqueue_add(adc_configure); //Configuro el adc.
+    adc_configure(); //Configuro el adc.
   uint8_t canal_elegido = cfg -> channel;
-  if(canal_elegido < 6 && !occupied_channels[canal_elegido]){
+  if(canal_elegido >= 0 && canal_elegido < 6 && !occupied_channels[canal_elegido]){
     channel[canal_elegido] = *cfg; //Ingreso la estructura en el arreglo
     occupied_channels[canal_elegido] = 1;
-    Serial.println("Se ingreso correctamente");
     return true;
   }
   return false;
@@ -112,6 +107,6 @@ ISR(ADC_vect){
   adc_set_new_channel(); //Seteo el nuevo canal
   if(current_channel == 0){ //Si ya recorri todos los canales
     fnqueue_add(adc_loop); //Busco entre todos los canales si puedo ejecutar un callback.
-  }
+  }//
   ADCSRA |= B01000000; //Vuelvo a iniciar la conversion
 }

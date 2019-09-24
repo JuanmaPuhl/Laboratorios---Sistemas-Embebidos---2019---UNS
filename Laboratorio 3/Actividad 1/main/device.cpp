@@ -9,7 +9,7 @@ const unsigned char PS_128    = (1 << ADPS2) | (1 << ADPS0) | (1 << ADPS0);
 void (*down_functions[5])(); //mis funciones de callback para los botones apretados
 void (*up_functions[5])(); //mis funciones de callback para los botones soltados
 
-uint16_t adc_key_val[5] = {30, 150, 360, 535, 760 };
+uint16_t adc_key_val[5] = {30, 220, 360, 535, 760 };
 uint8_t NUM_KEYS = 5;
 uint16_t adc_key_in;
 uint16_t key = -1;
@@ -35,7 +35,7 @@ void aReadIn(uint16_t adcValor)
 {
   key = get_key(adcValor);   // convert into key press
   if (key != oldkey) {
-    delay(50);
+    delay(80);
     key = get_key(adcValor);
     if (key != oldkey)
     {
