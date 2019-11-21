@@ -1,0 +1,473 @@
+Analysis & Synthesis report for Actividad2
+Mon Nov 04 11:05:13 2019
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Port Connectivity Checks: "conversor:conv|segment7:segment3"
+ 11. Port Connectivity Checks: "conversor:conv|BCD2HEX:bcd6"
+ 12. Port Connectivity Checks: "conversor:conv|BCD2HEX:bcd1"
+ 13. Port Connectivity Checks: "conversor:conv"
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Nov 04 11:05:13 2019       ;
+; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Revision Name                   ; Actividad2                                  ;
+; Top-level Entity Name           ; Actividad2                                  ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 70                                          ;
+; Total pins                      ; 66                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; Actividad2         ; Actividad2         ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                 ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                   ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
+; Actividad2.v                     ; yes             ; User Verilog HDL File  ; C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v ;         ;
+; A.v                              ; yes             ; User Verilog HDL File  ; C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/A.v          ;         ;
+; B.v                              ; yes             ; User Verilog HDL File  ; C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/B.v          ;         ;
+; D.v                              ; yes             ; User Verilog HDL File  ; C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/D.v          ;         ;
+; C.v                              ; yes             ; User Verilog HDL File  ; C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/C.v          ;         ;
+; demux.v                          ; yes             ; User Verilog HDL File  ; C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/demux.v      ;         ;
+; counter.v                        ; yes             ; User Verilog HDL File  ; C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/counter.v    ;         ;
+; mux.v                            ; yes             ; User Verilog HDL File  ; C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/mux.v        ;         ;
+; register.v                       ; yes             ; User Verilog HDL File  ; C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/register.v   ;         ;
+; demux_1.v                        ; yes             ; User Verilog HDL File  ; C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/demux_1.v    ;         ;
+; BCD2HEX.v                        ; yes             ; User Verilog HDL File  ; C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/BCD2HEX.v    ;         ;
+; segment7.v                       ; yes             ; User Verilog HDL File  ; C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/segment7.v   ;         ;
+; conversor.v                      ; yes             ; User Verilog HDL File  ; C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/conversor.v  ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                ;
++---------------------------------------------+------------------------------+
+; Resource                                    ; Usage                        ;
++---------------------------------------------+------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 494                          ;
+;                                             ;                              ;
+; Combinational ALUT usage for logic          ; 667                          ;
+;     -- 7 input functions                    ; 0                            ;
+;     -- 6 input functions                    ; 312                          ;
+;     -- 5 input functions                    ; 138                          ;
+;     -- 4 input functions                    ; 184                          ;
+;     -- <=3 input functions                  ; 33                           ;
+;                                             ;                              ;
+; Dedicated logic registers                   ; 70                           ;
+;                                             ;                              ;
+; I/O pins                                    ; 66                           ;
+;                                             ;                              ;
+; Total DSP Blocks                            ; 0                            ;
+;                                             ;                              ;
+; Maximum fan-out node                        ; counter:count2|counter_up[1] ;
+; Maximum fan-out                             ; 25                           ;
+; Total fan-out                               ; 3678                         ;
+; Average fan-out                             ; 4.23                         ;
++---------------------------------------------+------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                             ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                          ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------+-------------+--------------+
+; |Actividad2                ; 667 (0)             ; 70 (0)                    ; 0                 ; 0          ; 66   ; 0            ; |Actividad2                                  ; Actividad2  ; work         ;
+;    |C:c1|                  ; 592 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1                             ; C           ; work         ;
+;       |A:a1|               ; 29 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|A:a1                        ; A           ; work         ;
+;       |A:a2|               ; 29 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|A:a2                        ; A           ; work         ;
+;       |A:a3|               ; 29 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|A:a3                        ; A           ; work         ;
+;       |A:a4|               ; 29 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|A:a4                        ; A           ; work         ;
+;       |B:b1|               ; 148 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|B:b1                        ; B           ; work         ;
+;          |A:a1|            ; 22 (22)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|B:b1|A:a1                   ; A           ; work         ;
+;          |A:a2|            ; 22 (22)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|B:b1|A:a2                   ; A           ; work         ;
+;          |A:a3|            ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|B:b1|A:a3                   ; A           ; work         ;
+;          |A:a4|            ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|B:b1|A:a4                   ; A           ; work         ;
+;          |A:a5|            ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|B:b1|A:a5                   ; A           ; work         ;
+;          |A:a6|            ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|B:b1|A:a6                   ; A           ; work         ;
+;       |B:b2|               ; 192 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|B:b2                        ; B           ; work         ;
+;          |A:a1|            ; 22 (22)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|B:b2|A:a1                   ; A           ; work         ;
+;          |A:a2|            ; 22 (22)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|B:b2|A:a2                   ; A           ; work         ;
+;          |A:a3|            ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|B:b2|A:a3                   ; A           ; work         ;
+;          |A:a4|            ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|B:b2|A:a4                   ; A           ; work         ;
+;          |A:a5|            ; 47 (47)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|B:b2|A:a5                   ; A           ; work         ;
+;          |A:a6|            ; 47 (47)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|B:b2|A:a6                   ; A           ; work         ;
+;       |D:d1|               ; 68 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|D:d1                        ; D           ; work         ;
+;          |A:a1|            ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|D:d1|A:a1                   ; A           ; work         ;
+;          |A:a2|            ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|D:d1|A:a2                   ; A           ; work         ;
+;          |A:a3|            ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|D:d1|A:a3                   ; A           ; work         ;
+;          |A:a4|            ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|D:d1|A:a4                   ; A           ; work         ;
+;       |D:d2|               ; 68 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|D:d2                        ; D           ; work         ;
+;          |A:a1|            ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|D:d2|A:a1                   ; A           ; work         ;
+;          |A:a2|            ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|D:d2|A:a2                   ; A           ; work         ;
+;          |A:a3|            ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|D:d2|A:a3                   ; A           ; work         ;
+;          |A:a4|            ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|C:c1|D:d2|A:a4                   ; A           ; work         ;
+;    |conversor:conv|        ; 27 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|conversor:conv                   ; conversor   ; work         ;
+;       |BCD2HEX:bcd3|       ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|conversor:conv|BCD2HEX:bcd3      ; BCD2HEX     ; work         ;
+;       |BCD2HEX:bcd5|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|conversor:conv|BCD2HEX:bcd5      ; BCD2HEX     ; work         ;
+;       |BCD2HEX:bcd7|       ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|conversor:conv|BCD2HEX:bcd7      ; BCD2HEX     ; work         ;
+;       |segment7:segment1|  ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|conversor:conv|segment7:segment1 ; segment7    ; work         ;
+;       |segment7:segment2|  ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|conversor:conv|segment7:segment2 ; segment7    ; work         ;
+;       |segment7:segment3|  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|conversor:conv|segment7:segment3 ; segment7    ; work         ;
+;    |counter:count2|        ; 3 (3)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|counter:count2                   ; counter     ; work         ;
+;    |counter:count|         ; 3 (3)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|counter:count                    ; counter     ; work         ;
+;    |demux:DM1|             ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|demux:DM1                        ; demux       ; work         ;
+;    |demux_1:DM2|           ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|demux_1:DM2                      ; demux_1     ; work         ;
+;    |mux:MS|                ; 26 (26)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|mux:MS                           ; mux         ; work         ;
+;    |register:r0|           ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|register:r0                      ; register    ; work         ;
+;    |register:r1|           ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|register:r1                      ; register    ; work         ;
+;    |register:r2|           ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|register:r2                      ; register    ; work         ;
+;    |register:r3|           ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|register:r3                      ; register    ; work         ;
+;    |register:r4|           ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|register:r4                      ; register    ; work         ;
+;    |register:r5|           ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|register:r5                      ; register    ; work         ;
+;    |register:r6|           ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|register:r6                      ; register    ; work         ;
+;    |register:r7|           ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Actividad2|register:r7                      ; register    ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 70    ;
+; Number of registers using Synchronous Clear  ; 64    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 16:1               ; 8 bits    ; 80 LEs        ; 40 LEs               ; 40 LEs                 ; No         ; |Actividad2|mux:MS|Mux7    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++--------------------------------------------------------------+
+; Port Connectivity Checks: "conversor:conv|segment7:segment3" ;
++-----------+-------+----------+-------------------------------+
+; Port      ; Type  ; Severity ; Details                       ;
++-----------+-------+----------+-------------------------------+
+; bcd[3..2] ; Input ; Info     ; Stuck at GND                  ;
++-----------+-------+----------+-------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "conversor:conv|BCD2HEX:bcd6"                                                                                                                                                        ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; A3     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; A3[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "conversor:conv|BCD2HEX:bcd1"                                                                                                                                                        ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; A3     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; A3[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "conversor:conv"                                                                     ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; S    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 70                          ;
+;     SCLR              ; 64                          ;
+;     plain             ; 6                           ;
+; arriav_lcell_comb     ; 671                         ;
+;     normal            ; 671                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 13                          ;
+;         3 data inputs ; 18                          ;
+;         4 data inputs ; 184                         ;
+;         5 data inputs ; 138                         ;
+;         6 data inputs ; 312                         ;
+; boundary_port         ; 66                          ;
+;                       ;                             ;
+; Max LUT depth         ; 24.00                       ;
+; Average LUT depth     ; 22.38                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:11     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Mon Nov 04 11:04:44 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Actividad2 -c Actividad2
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file actividad2.v
+    Info (12023): Found entity 1: Actividad2 File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file a.v
+    Info (12023): Found entity 1: A File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/A.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file b.v
+    Info (12023): Found entity 1: B File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/B.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file d.v
+    Info (12023): Found entity 1: D File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/D.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file c.v
+    Info (12023): Found entity 1: C File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/C.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file demux.v
+    Info (12023): Found entity 1: demux File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/demux.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file counter.v
+    Info (12023): Found entity 1: counter File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/counter.v Line: 1
+Warning (12090): Entity "mux" obtained from "mux.v" instead of from Quartus Prime megafunction library File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/mux.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux.v
+    Info (12023): Found entity 1: mux File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/mux.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file register.v
+    Info (12023): Found entity 1: register File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/register.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file demux_1.v
+    Info (12023): Found entity 1: demux_1 File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/demux_1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file bcd2hex.v
+    Info (12023): Found entity 1: BCD2HEX File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/BCD2HEX.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file segment7.v
+    Info (12023): Found entity 1: segment7 File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/segment7.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file conversor.v
+    Info (12023): Found entity 1: conversor File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/conversor.v Line: 1
+Info (12127): Elaborating entity "Actividad2" for the top level hierarchy
+Warning (10034): Output port "HEX3" at Actividad2.v(12) has no driver File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 12
+Warning (10034): Output port "HEX4" at Actividad2.v(13) has no driver File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 13
+Warning (10034): Output port "HEX5" at Actividad2.v(14) has no driver File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 14
+Warning (10034): Output port "LEDR[9..8]" at Actividad2.v(20) has no driver File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 20
+Info (12128): Elaborating entity "register" for hierarchy "register:r0" File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 55
+Info (12128): Elaborating entity "C" for hierarchy "C:c1" File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 118
+Info (12128): Elaborating entity "B" for hierarchy "C:c1|B:b1" File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/C.v Line: 32
+Info (12128): Elaborating entity "A" for hierarchy "C:c1|B:b1|A:a1" File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/B.v Line: 19
+Info (12128): Elaborating entity "D" for hierarchy "C:c1|D:d2" File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/C.v Line: 84
+Info (12128): Elaborating entity "counter" for hierarchy "counter:count" File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 123
+Info (12128): Elaborating entity "demux" for hierarchy "demux:DM1" File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 141
+Info (12128): Elaborating entity "demux_1" for hierarchy "demux_1:DM2" File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 154
+Info (12128): Elaborating entity "mux" for hierarchy "mux:MS" File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 167
+Info (12128): Elaborating entity "conversor" for hierarchy "conversor:conv" File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 184
+Info (12128): Elaborating entity "BCD2HEX" for hierarchy "conversor:conv|BCD2HEX:bcd1" File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/conversor.v Line: 23
+Info (12128): Elaborating entity "segment7" for hierarchy "conversor:conv|segment7:segment1" File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/conversor.v Line: 120
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 11
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 12
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 12
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 12
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 12
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 12
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 12
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 12
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 13
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 13
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 13
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 13
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 13
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 13
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 13
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 14
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 14
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 14
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 14
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 14
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 14
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 14
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 20
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 20
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 17
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 24
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/juanm/Desktop/UltimoEmbebidos/Actividad2/Actividad2.v Line: 24
+Info (21057): Implemented 797 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 14 input pins
+    Info (21059): Implemented 52 output pins
+    Info (21061): Implemented 731 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 36 warnings
+    Info: Peak virtual memory: 4851 megabytes
+    Info: Processing ended: Mon Nov 04 11:05:13 2019
+    Info: Elapsed time: 00:00:29
+    Info: Total CPU time (on all processors): 00:00:49
+
+

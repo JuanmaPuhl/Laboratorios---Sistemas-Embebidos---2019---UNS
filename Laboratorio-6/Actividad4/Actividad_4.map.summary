@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Mon Nov 04 11:13:39 2019
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+Revision Name : Actividad_4
+Top-level Entity Name : Actividad_4
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 2501
+Total pins : 70
+Total virtual pins : 0
+Total block memory bits : 1,702,336
+Total DSP Blocks : 3
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0
